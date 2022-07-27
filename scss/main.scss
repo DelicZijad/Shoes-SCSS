@@ -1,0 +1,99 @@
+@use 'util' as u;
+@use 'global' as g;
+
+header{
+    padding-block: 15rem;
+    background-image: url(../images/shoeBig.png),u.$radial-black;
+    background-position: center center;
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    color:white;
+    .container{
+        display: grid;
+        place-items: center;
+    }
+    @include u.desktop{
+        height: 100vh;
+    }
+  
+}
+.featured{
+    background-color: #eee;
+    &__split{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3rem;
+    }
+   &__item{
+    width: 60%;
+    z-index: 5;
+    position: relative;
+    flex-basis: 30%;
+    min-width: 15rem;
+    
+        &::after{
+        content: '';
+        position: absolute;
+    padding: 80% 80% 0 0;
+    background-color: u.$afterBlue;
+    top: 15%;
+    left: 5%;
+    border-radius: 50%;
+    z-index: -1;
+    }
+
+   }
+}
+
+.product{
+    padding: 3rem;
+    margin-bottom: 5rem;
+    border-radius: 10px;
+  
+    
+    &__grid{
+        @include u.grid(1);
+        justify-items:center;
+        position: relative;
+        @include u.tablet{
+            @include u.grid(2)
+        }
+        
+    }
+    &__content{
+        @include u.grid(1);
+        justify-items: center;
+        @include u.tablet{
+            @include u.grid(1);
+            justify-items: left;
+        }
+    }
+    &__heading{
+        font-size: 3rem;
+        color: white;
+        font-weight: 800;
+        @include u.tablet{
+            text-align: left;
+            font-size: 3.75rem;
+        }
+        @include u.desktop{
+            font-size: 5rem;
+        }
+    }
+    &__description{
+        line-height: 1.5;
+        @include u.tablet{
+            text-align: left;
+        }
+    }
+    &__img{
+   transform: translateY(-5rem);
+ @include u.tablet{
+transform: translate(-4rem, 2rem) scale(1.3);
+    width: 100%;
+    
+ }
+    }
+}

@@ -1,0 +1,65 @@
+@use '../util' as u;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+body{
+    font-family: 'Poppins',sans-serif;
+    line-height: 1;
+}
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 300;
+}
+
+.upper {
+    text-transform: uppercase;
+}
+.container {
+    width: 85%;
+    max-width: 65rem;
+    margin-inline: auto;
+}
+#mainHeading{
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+    @include u.tablet{
+        font-size: 3.75rem;
+    }
+    @include u.desktop{
+        font-size: 4.5rem;
+    }
+}
+.sectionHeading{
+    font-size: 2.5rem;
+    margin-bottom: 5rem;
+    @include u.tablet{
+        font-size: 3.75rem;
+    }
+@include u.desktop{
+    font-size: 4rem;
+}
+    color: u.$titleColor;
+}
+section{
+    padding-block: 7rem;
+}
